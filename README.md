@@ -1,7 +1,7 @@
 ## puzzleHelperMS
-![image](https://i.imgur.com/A7WHQFB.png)
+![image](https://i.imgur.com/ZRkwCj8.jpg)
 
-An OpenCV python script to help with the puzzle mini game in MS
+An OpenCV python script to help with the mini lounge mini games game in MS
 
 ### Prerequisites
 - OpenCV2
@@ -9,6 +9,7 @@ An OpenCV python script to help with the puzzle mini game in MS
 - Python 3+ 64 Bits
 - imutils
 - pywin32
+- win32api
 
 ``` 
 pip install opencv-python
@@ -22,6 +23,6 @@ pip install pywin32
 - 1366 x 768 Resolution
 - External Chat window does not matter
 - To exit, press Q when focused on any of the opencv windows
-- To read the next image, hold C until the opencv windows close. (Do it when the black transition screen is there)
 
-Images are tagged with Row X Column X (e.g. R1C1)
+### Features
+- Fully automated "Colorful Ignition" Mini Game
