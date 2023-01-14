@@ -1,7 +1,7 @@
-## puzzleHelperMS
+## Mini Lounge Minigames Helper
 ![image](https://i.imgur.com/ZRkwCj8.jpg)
 
-An OpenCV python script to help with the mini lounge mini games game in MS
+An OpenCV python script to help with the mini lounge mini games in MS
 
 ### Prerequisites
 - OpenCV2
