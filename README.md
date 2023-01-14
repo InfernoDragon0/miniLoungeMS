@@ -22,7 +22,7 @@ pip install pywin32
 - Set your maplestory to windowed mode
 - 1366 x 768 Resolution
 - External Chat window does not matter
-- Run ```python main.py```
+- Run ```python main.py```, make sure it is run in ADMIN MODE!
 - To exit, press Q when focused on any of the opencv windows
 
 ### Features

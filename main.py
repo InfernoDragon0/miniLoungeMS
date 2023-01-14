@@ -5,9 +5,7 @@ import win32ui
 import win32con
 import numpy
 import cv2
-import imutils
 import os
-import pydirectinput
 import win32api
 
 hwnds = []
@@ -91,8 +89,8 @@ def runCV():
         datafever = datashow[640:680, 410:630]
         #datascaled = cv2.resize(datasmol, interpolation=cv2.INTER_AREA, dsize=(datasmol.shape[1]//6, datasmol.shape[0]//6))
         
-        cv2.rectangle(datashow, (410,400), (610,600), (0,255,0), 2)
-        cv2.rectangle(datashow, (410,640), (630,680), (0,0,255), 2)
+        # cv2.rectangle(datashow, (410,400), (610,600), (0,255,0), 2)
+        # cv2.rectangle(datashow, (410,640), (630,680), (0,0,255), 2)
         #cv2.imshow("datA", datashow)
         cv2.imshow("Stage", datasmol)
         cv2.imshow("Fever", datafever)
@@ -122,7 +120,6 @@ def runCV():
                     #show the image in cv2
                     print("MATCH FOUND with chance of: " + str(max_val) + " ID: " + str(i))
                     matchFound = True
-                    imageSelected = image
                     cv2.imshow('image', image)
 
                     #NOTE: must run in admin mode 
@@ -142,7 +139,6 @@ def runCV():
                         win32api.PostMessage(hwnd, win32con.WM_KEYUP, win32con.VK_UP, 0x001C0001)
                         print("UP")
 
-
                     #random in range
                     tend = time.time()
                     rand = random.uniform(0, variant)
@@ -152,7 +148,6 @@ def runCV():
 
                     matchFound = False
                     break
-
 
         timend = time.time()
         
@@ -168,12 +163,6 @@ def runCV():
             win32gui.ReleaseDC(hwnd, wDC)
             win32gui.DeleteObject(dataBitMap.GetHandle())
             break
-        elif cv2.waitKey(1) & 0xFF == ord('c'): #continue to the next image
-            cv2.destroyAllWindows()
-            matchFound = False
-            imageSelected = None
-            imageCut = None
-
 
 loadAllImages()
 runCV()
