@@ -22,8 +22,10 @@ pip install pywin32
 - Set your maplestory to windowed mode
 - 1366 x 768 Resolution
 - External Chat window does not matter
-- Run ```python main.py```, make sure it is run in ADMIN MODE!
+- Run ```python main.py```, make sure it is run in ADMIN MODE! For See Saw, run ```python mainseesaw.py```
 - To exit, press Q when focused on any of the opencv windows
+- For See Saw, you must set your npc key to S, or go to the ```mainseesaw.py``` and change ```kValue``` to your key
 
 ### Features
 - Fully automated "Colorful Ignition" Mini Game
+- Fully Automated "See Saw" Mini Game
