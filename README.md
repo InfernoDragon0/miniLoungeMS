@@ -16,6 +16,7 @@ pip install opencv-python
 pip install imutils
 pip install numpy
 pip install pywin32
+pip install keyboard
 ```
 
 ### Instructions
