@@ -16,7 +16,7 @@ w = 1366
 h = 768
 mouseX,mouseY = 0,0
 
-targetFPS = 60 #change this to change the FPS
+targetFPS = 120 #change this to change the FPS
 sleep = 0.01 #change this to change the speed of the keysend
 variant = 0.01 #change this to add a random timer to the keysend
 
@@ -79,6 +79,8 @@ def runCV():
     # cv2.namedWindow('image')
     # cv2.setMouseCallback('image',draw_circle)
 
+    count = 1
+
     while True:
         #get the image from the window
         timestart = time.time()
@@ -103,13 +105,18 @@ def runCV():
         found = numpy.where((datasmol[:, :, 0] == 83) &  (datasmol[:, :, 1] == 239) & (datasmol[:, :, 2] == 240))
         if (len(found[0]) > 0):
             #NOTE: must run in admin mode 
-            delay = random.random() * variant
-            time.sleep(0.015 + delay)
+            
+            if count <= 40:
+                time.sleep(0.045 - (count*0.001))
 
             keyboard.press(kValue)
-            time.sleep(0.01)
+            time.sleep(0.1)
             keyboard.release(kValue)
-            print("SEND NPC KEY with rand delay", delay)
+
+            count+= 1
+            print("SEND NPC KEY")
+            time.sleep(0.965)
+            print("Awake for ", count)
 
         timend = time.time()
         
