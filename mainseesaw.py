@@ -78,7 +78,7 @@ def runCV():
     cDC.SelectObject(dataBitMap)
     # cv2.namedWindow('image')
     # cv2.setMouseCallback('image',draw_circle)
-
+    keyboard.press_and_release('space')
     count = 1
 
     while True:
@@ -106,14 +106,17 @@ def runCV():
         if (len(found[0]) > 0):
             #NOTE: must run in admin mode 
             
-            if count <= 40:
-                time.sleep(0.045 - (count*0.001))
+            if count < 40:
+                count+= 1
+            else:
+                count = 1
+            
+            time.sleep(0.045 - (count*0.001))
 
             keyboard.press(kValue)
             time.sleep(0.1)
             keyboard.release(kValue)
 
-            count+= 1
             print("SEND NPC KEY")
             time.sleep(0.965)
             print("Awake for ", count)
