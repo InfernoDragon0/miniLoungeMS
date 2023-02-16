@@ -1,7 +1,7 @@
 ## Mini Lounge Minigames Helper
 ![image](https://i.imgur.com/ZRkwCj8.jpg)
 
-An OpenCV python script to help with the mini lounge mini games in MS
+An OpenCV python script to help with the mini lounge mini games in MS. Note: this uses a non-invasive method. It uses OpenCV to capture the screen and act upon the current status of the game.
 
 ### Prerequisites
 - OpenCV2
