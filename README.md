@@ -6,9 +6,8 @@
 ![image](https://i.imgur.com/ZRkwCj8.jpg)
 
 ### Notes
-To run the New Method for Colorful invitation, run ```maininvitation.py```. New method may fail the combo from time to time due to incorrect delays (still fixing)
-
-An OpenCV python script to help with the mini lounge mini games in MS. Note: this uses a non-invasive method. It uses OpenCV to capture the screen and act upon the current status of the game.
+- To run the New Method for Colorful invitation, run ```maininvitation.py```. New method may fail the combo from time to time due to incorrect delays (still fixing)
+- An OpenCV python script to help with the mini lounge mini games in MS. This uses a non-invasive method. It uses OpenCV to capture the screen and act upon the current status of the game.
 
 ### Prerequisites
 - OpenCV2
