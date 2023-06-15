@@ -1,7 +1,13 @@
 ## Mini Lounge Minigames Helper
+### New Method (Color Detection)
+![image](https://github.com/InfernoDragon0/miniLoungeMS/assets/1367130/574441d3-b052-4adf-80ce-fc2f6cd56170)
+
+### Old Method (Image Detection)
 ![image](https://i.imgur.com/ZRkwCj8.jpg)
 
-An OpenCV python script to help with the mini lounge mini games in MS. Note: this uses a non-invasive method. It uses OpenCV to capture the screen and act upon the current status of the game.
+### Notes
+- To run the New Method for Colorful invitation, run ```maininvitation.py```. New method may fail the combo from time to time due to incorrect delays (still fixing)
+- An OpenCV python script to help with the mini lounge mini games in MS. This uses a non-invasive method. It uses OpenCV to capture the screen and act upon the current status of the game.
 
 ### Prerequisites
 - OpenCV2
