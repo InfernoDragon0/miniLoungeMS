@@ -16,7 +16,7 @@ mouseX,mouseY = 0,0
 
 targetFPS = 60 #change this to change the FPS
 sleep = 0.16 #change this to change the speed of the keysend
-variant = 0 #change this to add a random timer to the keysend
+variant = 0 #set to 1 if add variant
 
 # data
 matchFound = False
@@ -149,7 +149,9 @@ def runCV():
                 print("UP")
         
             #random sleep between 0.01 and 0.05
-            sleeprand = random.uniform(0.01, 0.05)
+            sleeprand = 0
+            if variant == 1:
+                sleeprand = random.uniform(0.01, 0.05)
             time.sleep(sleep + sleeprand)
 
         timend = time.time()
