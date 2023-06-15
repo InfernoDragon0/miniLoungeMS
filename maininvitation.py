@@ -15,7 +15,7 @@ h = 768
 mouseX,mouseY = 0,0
 
 targetFPS = 60 #change this to change the FPS
-sleep = 0.1 #change this to change the speed of the keysend
+sleep = 0.16 #change this to change the speed of the keysend
 variant = 0 #change this to add a random timer to the keysend
 
 # data
@@ -114,8 +114,8 @@ def runCV():
         # cv2.rectangle(datashow, (410,400), (610,600), (0,255,0), 2)
         # cv2.rectangle(datashow, (410,640), (630,680), (0,0,255), 2)
         #cv2.imshow("datA", datashow)
-        cv2.imshow("Stage", datasmol)
-        cv2.imshow("Fever", datafever)
+        # cv2.imshow("Stage", datasmol)
+        # cv2.imshow("Fever", datafever)
         #fever
         fevercheck = cv2.matchTemplate(datafever, imageData[0], cv2.TM_CCOEFF_NORMED)
         fmin_val, fmax_val, fmin_loc, fmax_loc = cv2.minMaxLoc(fevercheck)
@@ -125,54 +125,32 @@ def runCV():
             win32api.PostMessage(hwnd, win32con.WM_KEYDOWN, win32con.VK_SPACE, 0x001E0001)
             win32api.PostMessage(hwnd, win32con.WM_KEYUP, win32con.VK_SPACE, 0x001E0001)
             matchFound = True
+            time.sleep(0.1)
+
         else:
-            print("End Fever")
+            # print("End Fever")
             matchFound = False
 
-        #NOTE: must run in admin mode 
-        if (color == 1): #left
-            #send key LEFT ARROW 
-            win32api.PostMessage(hwnd, win32con.WM_KEYDOWN, win32con.VK_LEFT, 0x001E0001)
-            win32api.PostMessage(hwnd, win32con.WM_KEYUP, win32con.VK_LEFT, 0x001E0001)
-            print("LEFT")
-        elif (color == 0): #right
-            #send key RIGHT ARROW
-            win32api.PostMessage(hwnd, win32con.WM_KEYDOWN, win32con.VK_RIGHT, 0x00200001)
-            win32api.PostMessage(hwnd, win32con.WM_KEYUP, win32con.VK_RIGHT, 0x00200001)
-            print("RIGHT")
-        elif (color == 2): #up
-            #send key UP ARROW
-            win32api.PostMessage(hwnd, win32con.WM_KEYDOWN, win32con.VK_UP, 0x001C0001)
-            win32api.PostMessage(hwnd, win32con.WM_KEYUP, win32con.VK_UP, 0x001C0001)
-            print("UP")
+            #NOTE: must run in admin mode 
+            if (color == 1): #left
+                #send key LEFT ARROW 
+                win32api.PostMessage(hwnd, win32con.WM_KEYDOWN, win32con.VK_LEFT, 0x001E0001)
+                win32api.PostMessage(hwnd, win32con.WM_KEYUP, win32con.VK_LEFT, 0x001E0001)
+                print("LEFT")
+            elif (color == 0): #right
+                #send key RIGHT ARROW
+                win32api.PostMessage(hwnd, win32con.WM_KEYDOWN, win32con.VK_RIGHT, 0x00200001)
+                win32api.PostMessage(hwnd, win32con.WM_KEYUP, win32con.VK_RIGHT, 0x00200001)
+                print("RIGHT")
+            elif (color == 2): #up
+                #send key UP ARROW
+                win32api.PostMessage(hwnd, win32con.WM_KEYDOWN, win32con.VK_UP, 0x001C0001)
+                win32api.PostMessage(hwnd, win32con.WM_KEYUP, win32con.VK_UP, 0x001C0001)
+                print("UP")
         
-        time.sleep(sleep)
-
-        # if not matchFound: #run a loop and matchTemplate on each of the images loaded
-        #     tstart = time.time()
-        #     for i in range(1, len(imageData)):
-        #         image = imageData[i]
-        #         #cv2 matchtemplate
-        #         result = cv2.matchTemplate(datasmol, image, cv2.TM_CCOEFF_NORMED)
-        #         min_val, max_val, min_loc, max_loc = cv2.minMaxLoc(result)
-        #         print("searching for match: " + str(max_val))
-        #         if max_val > 0.75:
-        #             #show the image in cv2
-        #             print("MATCH FOUND with chance of: " + str(max_val) + " ID: " + str(i))
-        #             matchFound = True
-        #             cv2.imshow('image', image)
-
-        
-
-        #             #random in range
-        #             tend = time.time()
-        #             rand = random.uniform(0, variant)
-        #             print("sleep for " + str(sleep + rand))
-        #             if ((sleep + rand) - (tend - tstart) > 0):
-        #                 time.sleep((sleep + rand) - (tend-tstart))
-
-        #             matchFound = False
-        #             break
+            #random sleep between 0.01 and 0.05
+            sleeprand = random.uniform(0.01, 0.05)
+            time.sleep(sleep + sleeprand)
 
         timend = time.time()
         
