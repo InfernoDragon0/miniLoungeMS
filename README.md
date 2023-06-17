@@ -34,5 +34,6 @@ pip install keyboard
 - For See Saw, you must set your npc key to S, or go to the ```mainseesaw.py``` and change ```kValue``` to your key
 
 ### Features
-- Fully automated "Colorful Ignition" Mini Game
-- Fully Automated "See Saw" Mini Game
+- [x] Fully automated "Colorful Ignition" Mini Game
+- [x] Fully Automated "See Saw" Mini Game
+- [x] Fully Automated "Cake Stacking" Mini Game

@@ -30,7 +30,7 @@ h = 768
 mouseX,mouseY = 0,0
 
 targetFPS = 72 #change this to change the FPS
-sleep = 0.15 #change this to change the speed of the keysend
+sleep = 0.2 #change this to change the speed of the keysend
 variant = 0 #set to 1 if add variant
 
 # data
