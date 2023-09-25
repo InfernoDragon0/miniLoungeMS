@@ -375,7 +375,7 @@ def runCV():
         
         if shouldStabilize:
             print("waiting for camera stabilize")
-            while (time.time() - timestart < 3.35):
+            while (time.time() - timestart < 3):
                 cDC.BitBlt((0,0),(w, h) , dcObj, (0,0), win32con.SRCCOPY)
 
                 #make CV image
